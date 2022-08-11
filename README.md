@@ -22,7 +22,7 @@ service == diFactory.GetRealisation<IGetGuidService>();
 ```
 
 ### Transient
-Transient - ~~same~~ new object every time you call a fabric method.
+Transient - ~~same~~ **new** object every time you call a fabric method.
 ```csharp
 var diFactory = new DIFactory();
 diFactory.AddTransient<IGetGuidService, GetGuidService>();
