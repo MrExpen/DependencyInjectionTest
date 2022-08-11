@@ -10,7 +10,7 @@ In software engineering, **dependency injection** is a **design pattern** in whi
 ## Examples:
 
 ### Singleton
-###### Singleton - same object every time you call a fabric method.
+Singleton - same object every time you call a fabric method.
 ```csharp
 var diFactory = new DIFactory();
 diFactory.AddSingleton<IGetGuidService, GetGuidService>();
@@ -22,7 +22,7 @@ service == diFactory.GetRealisation<IGetGuidService>();
 ```
 
 ### Transient
-###### Transient - ~~same~~ new object every time you call a fabric method.
+Transient - ~~same~~ new object every time you call a fabric method.
 ```csharp
 var diFactory = new DIFactory();
 diFactory.AddTransient<IGetGuidService, GetGuidService>();
