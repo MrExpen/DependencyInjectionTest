@@ -11,4 +11,6 @@ public class ServiceProviderFactory : IServiceProviderFactory
             _ => throw new ArgumentOutOfRangeException(nameof(lifeTime))
         };
     }
+
+    public IServiceProvider<T> GetSingletonServiceProvider<T>(T instance) => new SingletonServiceProvider<T>(instance);
 }

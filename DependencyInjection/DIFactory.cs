@@ -25,6 +25,16 @@ public class DIFactory : IDIFactory
         }
     }
 
+    public void AddSingleton<T>(T instance)
+    {
+        EnsureNotPresent<T>();
+
+        lock (_lock)
+        {
+            _dependencies[typeof(T)] = _serviceProviderFactory.GetSingletonServiceProvider(instance);
+        }
+    }
+
     public object GetRealisation(Type type)
     {
         lock (_lock)

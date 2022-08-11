@@ -16,4 +16,9 @@ public class SingletonServiceProvider<T> : AbstractServiceProvider<T>
     public SingletonServiceProvider(Func<IDIFactory, T>? providerFunction) : base(providerFunction)
     {
     }
+
+    public SingletonServiceProvider(T instance) : base(null)
+    {
+        _cache = instance;
+    }
 }

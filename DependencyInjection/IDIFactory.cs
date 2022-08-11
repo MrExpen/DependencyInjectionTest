@@ -40,6 +40,8 @@ public interface IDIFactory
         where TRealisation : T
         => AddSingleton<T, TRealisation>(_ => func());
 
+    public void AddSingleton<T>(T instance);
+
     #endregion
 
     #endregion
