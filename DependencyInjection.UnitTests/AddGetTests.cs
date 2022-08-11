@@ -49,6 +49,6 @@ public class AddGetTests
     {
         Action addService = () => _diFactory.AddSingleton<GetGuidService>();
         addService.Should().NotThrow();
-        addService.Should().Throw<Exception>();
+        addService.Should().Throw<Exception>().WithMessage($"Realisation for type ${typeof(GetGuidService)} already exists.");
     }
 }
