@@ -6,7 +6,7 @@ public class SingletonServiceProvider<T> : AbstractServiceProvider<T>
     public override T GetService(IDIFactory dependencyProvider)
     {
         if (_cache is null)
-            _cache = _providerFunction(dependencyProvider);
+            _cache = ProviderFunction(dependencyProvider);
 
         return _cache;
     }

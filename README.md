@@ -7,6 +7,14 @@ In software engineering, **dependency injection** is a **design pattern** in whi
 * Resolve constructors of dependent class if dependence is registered in factory
 * Singleton and Transient Service life times
 
+## Peculiarities:
+* Uses the constructor with the most parameters
+* Resolved registered types
+* While resolving registered types can:
+  * Construct another registered types
+  * Construct unregistered types with default constructor
+  * Leave a default value of parameter if presents and only if can not resolve this type
+
 ## Examples:
 
 ### Singleton

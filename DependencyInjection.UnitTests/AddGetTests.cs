@@ -1,4 +1,5 @@
-﻿using DependencyInjection.UnitTests.Fake;
+﻿using DependencyInjection.Exceptions;
+using DependencyInjection.UnitTests.Fake;
 using FluentAssertions;
 
 namespace DependencyInjection.UnitTests;
@@ -49,6 +50,6 @@ public class AddGetTests
     {
         Action addService = () => _diFactory.AddSingleton<GetGuidService>();
         addService.Should().NotThrow();
-        addService.Should().Throw<Exception>().WithMessage($"Realisation for type ${typeof(GetGuidService)} already exists.");
+        addService.Should().Throw<TypeAlreadyRegisteredException>();
     }
 }

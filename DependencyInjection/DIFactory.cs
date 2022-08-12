@@ -1,4 +1,7 @@
-﻿using DependencyInjection.Services.Factory;
+﻿using DependencyInjection.Exceptions;
+using DependencyInjection.Services.Factory;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using IServiceProvider = DependencyInjection.Services.IServiceProvider;
 
 namespace DependencyInjection;
@@ -70,6 +73,8 @@ public class DIFactory : IDIFactory
     private void EnsureNotPresent<T>()
     {
         if (ContainsRealisation(typeof(T)))
-            throw new Exception($"Realisation for type ${typeof(T)} already exists.");
+        {
+            throw new TypeAlreadyRegisteredException($"Realisation for type ${typeof(T).FullName} already exists");
+        }
     }
 }

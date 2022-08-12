@@ -7,7 +7,7 @@ public class TransientServiceProvider<T> : AbstractServiceProvider<T>
     }
 
     public override T GetService(IDIFactory dependencyProvider)
-        => _providerFunction(dependencyProvider);
+        => ProviderFunction(dependencyProvider);
 
     public override LifeTime LifeTime => LifeTime.Transient;
 }

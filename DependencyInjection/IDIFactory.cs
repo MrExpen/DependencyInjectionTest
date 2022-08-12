@@ -5,7 +5,6 @@ public interface IDIFactory
     #region Add
 
     #region Transient
-
     void AddTransient<T, TRealisation>(Func<IDIFactory, TRealisation>? func = null) where TRealisation : T;
 
     #region Extensions
